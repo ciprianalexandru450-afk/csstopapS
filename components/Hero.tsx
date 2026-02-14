@@ -1,5 +1,5 @@
 import React from 'react';
-import { ClockIcon, ShieldIcon, DiamondIcon } from './icons';
+import { ClockIcon, ShieldIcon, DiamondIcon, BriefcaseIcon, HeartIcon, PlaneIcon, StarIcon, MoreHorizontalIcon } from './icons';
 
 const FeatureCard: React.FC<{ icon: React.ReactNode; title: string; description: string }> = ({ icon, title, description }) => (
   <div className="bg-[#2a2a2a] p-6 rounded-lg text-center flex flex-col items-center shadow-lg">
@@ -8,6 +8,15 @@ const FeatureCard: React.FC<{ icon: React.ReactNode; title: string; description:
     </div>
     <h3 className="text-xl font-bold text-white mb-2">{title}</h3>
     <p className="text-gray-400 text-sm">{description}</p>
+  </div>
+);
+
+const ServiceCard: React.FC<{ icon: React.ReactNode; title: string; }> = ({ icon, title }) => (
+  <div className="bg-[#2a2a2a] p-6 rounded-lg text-center flex flex-col items-center justify-center shadow-lg h-full">
+    <div className="mb-4 text-[#c0a062]">
+      {icon}
+    </div>
+    <h3 className="text-xl font-bold text-white">{title}</h3>
   </div>
 );
 
@@ -21,7 +30,7 @@ const Hero: React.FC = () => {
               Excelență in Mișcare
             </h1>
             <p className="mt-4 text-lg text-gray-300">
-              Service Premium Chauffer with Premium
+              Transformăm fiecare drum într-o experiență VIP.
             </p>
             <div className="mt-8">
               <a href="#rezervari" className="inline-block bg-gradient-to-r from-[#c0a062] to-[#d4b47a] text-black font-bold py-3 px-8 rounded-md shadow-lg hover:opacity-90 transition-opacity">
@@ -56,6 +65,42 @@ const Hero: React.FC = () => {
             description="Șoferi de prim rang cu Wi-Fi și băuturi premium incluse pentru confortul dumneavoastră." 
           />
         </div>
+
+        <div className="mt-24">
+          <p className="text-center max-w-3xl mx-auto text-gray-300 leading-relaxed">
+            Suntem o echipă dedicată, formată din soț și soție, specializați în transport de lux în regim privat și corporate. Cu o vastă experiență în servicii premium, ne mândrim cu un stil de condus impecabil și o atitudine profesională adaptată celor mai exigente cerințe.
+          </p>
+
+          <div className="mt-12 max-w-4xl mx-auto">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+              <ServiceCard 
+                icon={<BriefcaseIcon className="w-10 h-10" />}
+                title="Evenimente Corporate"
+              />
+              <ServiceCard 
+                icon={<HeartIcon className="w-10 h-10" />}
+                title="Nunți & Evenimente"
+              />
+              <ServiceCard 
+                icon={<PlaneIcon className="w-10 h-10" />}
+                title="Transfer Aeroport"
+              />
+              <ServiceCard 
+                icon={<StarIcon className="w-10 h-10" />}
+                title="Transport VIP"
+              />
+            </div>
+            <div className="mt-8 flex justify-center">
+                <div className="w-full sm:w-[calc(50%-1rem)]">
+                    <ServiceCard
+                      icon={<MoreHorizontalIcon className="w-10 h-10" />}
+                      title="Altele"
+                    />
+                </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
   );
