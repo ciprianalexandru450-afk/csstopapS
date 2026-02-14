@@ -1,23 +1,58 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-const GoldButton: React.FC<{ children: React.ReactNode, className?: string }> = ({ children, className = '' }) => (
-  <button className={`bg-gradient-to-r from-[#c0a062] to-[#d4b47a] text-black font-bold py-3 px-8 rounded-md shadow-lg hover:opacity-90 transition-opacity ${className}`}>
+const GoldButton: React.FC<{ children: React.ReactNode; className?: string; type?: 'button' | 'submit' | 'reset' }> = ({ children, className = '', type = 'button' }) => (
+  <button type={type} className={`bg-gradient-to-r from-[#c0a062] to-[#d4b47a] text-black font-bold py-3 px-8 rounded-md shadow-lg hover:opacity-90 transition-opacity ${className}`}>
     {children}
   </button>
 );
 
-const FormInput: React.FC<{ label: string; placeholder: string; type?: string; className?: string }> = ({ label, placeholder, type = 'text', className = '' }) => (
+const FormInput: React.FC<{ 
+  label: string; 
+  placeholder: string; 
+  type?: string; 
+  className?: string;
+  value: string;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  required?: boolean;
+}> = ({ label, placeholder, type = 'text', className = '', value, onChange, required = false }) => (
   <div className={className}>
     <label className="block text-sm font-medium text-gray-400 mb-2">{label}</label>
     <input 
       type={type} 
       placeholder={placeholder} 
       className="w-full bg-[#333] border border-gray-600 rounded-md py-2 px-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#c0a062] focus:border-transparent transition" 
+      value={value}
+      onChange={onChange}
+      required={required}
     />
   </div>
 );
 
 const BookingSection: React.FC = () => {
+  const [name, setName] = useState('');
+  const [phone, setPhone] = useState('');
+  const [date, setDate] = useState('');
+  const [time, setTime] = useState('');
+  const [pickup, setPickup] = useState('');
+  const [destination, setDestination] = useState('');
+
+  const handleSubmit = (event: React.FormEvent) => {
+    event.preventDefault();
+
+    const message = `Bună ziua! Am o rezervare nouă de pe site:
+Nume: ${name}
+Telefon: ${phone}
+Data: ${date}
+Ora: ${time}
+Preluare de la: ${pickup}
+Destinație: ${destination}`;
+
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappUrl = `https://wa.me/40741050618?text=${encodedMessage}`;
+
+    window.open(whatsappUrl, '_blank');
+  };
+
   return (
     <section id="rezervari" className="py-20 sm:py-28">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
@@ -30,19 +65,19 @@ const BookingSection: React.FC = () => {
         </div>
         <div className="bg-[#1a1a1a] p-8 rounded-lg shadow-2xl">
           <h3 className="text-2xl font-bold text-white mb-6">Solicită o Călătorie</h3>
-          <form className="space-y-4">
+          <form className="space-y-4" onSubmit={handleSubmit}>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <FormInput label="Nume" placeholder="Nume" />
-              <FormInput label="Număr tău complet" placeholder="Număr tău complet" />
+              <FormInput label="Nume" placeholder="Nume" value={name} onChange={(e) => setName(e.target.value)} required />
+              <FormInput label="Număr tău complet" placeholder="Număr tău complet" value={phone} onChange={(e) => setPhone(e.target.value)} required />
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <FormInput label="Data" placeholder="data" type="date" />
-              <FormInput label="Ora" placeholder="ora" type="time" />
+              <FormInput label="Data" placeholder="data" type="date" value={date} onChange={(e) => setDate(e.target.value)} required />
+              <FormInput label="Ora" placeholder="ora" type="time" value={time} onChange={(e) => setTime(e.target.value)} required />
             </div>
-            <FormInput label="Preluare" placeholder="Preluare" />
-            <FormInput label="Destinație" placeholder="Destinație" />
+            <FormInput label="Preluare" placeholder="Preluare" value={pickup} onChange={(e) => setPickup(e.target.value)} required />
+            <FormInput label="Destinație" placeholder="Destinație" value={destination} onChange={(e) => setDestination(e.target.value)} required />
             <div className="pt-4">
-              <GoldButton className="w-full">Rezervă acum</GoldButton>
+              <GoldButton type="submit" className="w-full">Rezervă acum</GoldButton>
             </div>
           </form>
         </div>
