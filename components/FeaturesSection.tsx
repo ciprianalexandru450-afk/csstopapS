@@ -15,7 +15,7 @@ const FeatureItem: React.FC<{ icon: React.ReactNode; label: string; value: strin
   
 const FeaturesSection: React.FC = () => {
     return (
-      <section id="informatii" className="py-20 sm:py-28">
+      <section id="contact" className="py-20 sm:py-28 scroll-mt-[100px]">
         <div className="bg-[#1a1a1a] p-8 md:p-12 rounded-lg shadow-2xl">
           <div className="max-w-5xl mx-auto">
             <h2 className="text-center font-serif text-4xl font-bold text-white mb-12">Informații Companie</h2>
