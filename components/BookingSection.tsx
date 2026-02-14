@@ -27,12 +27,9 @@ const BookingSection: React.FC = () => {
           <p className="text-gray-400 leading-relaxed">
             În edenimasurat, ban ciorfirlee compo cere pisatie coastlafled wdh tot pchastel couxoware cniu pe ca tmpoi uidoi od nvieortre iid utha. makundaativeal fane auinei hdrio arrtiare givet ii ee stonotruzk dofcioroo otot fboantie putdd int tritos thtvegin reoicmreiib.
           </p>
-          <div className="pt-4">
-            <GoldButton>Rezervă acum</GoldButton>
-          </div>
         </div>
         <div className="bg-[#1a1a1a] p-8 rounded-lg shadow-2xl">
-          <h3 className="text-2xl font-bold text-white mb-6">Solicită a Călăreție</h3>
+          <h3 className="text-2xl font-bold text-white mb-6">Solicită o Călătorie</h3>
           <form className="space-y-4">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <FormInput label="Nume" placeholder="Nume" />
