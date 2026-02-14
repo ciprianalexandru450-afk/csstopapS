@@ -12,7 +12,7 @@ const FeatureItem: React.FC<{ icon: React.ReactNode; text: string }> = ({ icon, 
 
 const FeaturesSection: React.FC = () => {
   return (
-    <section id="servicii" className="py-20 sm:py-28">
+    <section className="py-20 sm:py-28">
       <div className="bg-[#1a1a1a] p-8 md:p-12 rounded-lg shadow-2xl">
         <h2 className="text-3xl font-bold text-white mb-10">Contact ideail: 2</h2>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">

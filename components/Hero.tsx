@@ -19,7 +19,7 @@ const FeatureCard: React.FC<{ icon: React.ReactNode; title: string; description:
 
 const Hero: React.FC = () => {
   return (
-    <section className="py-20 sm:py-28">
+    <section id="servicii" className="py-20 sm:py-28">
       <div className="bg-[#1a1a1a] rounded-lg p-8 md:p-12 shadow-2xl">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <div className="text-center md:text-left">
