@@ -1,12 +1,6 @@
 import React from 'react';
 import { ClockIcon, ShieldIcon, DiamondIcon } from './icons';
 
-const GoldButton: React.FC<{ children: React.ReactNode, className?: string }> = ({ children, className = '' }) => (
-  <button className={`bg-gradient-to-r from-[#c0a062] to-[#d4b47a] text-black font-bold py-3 px-8 rounded-md shadow-lg hover:opacity-90 transition-opacity ${className}`}>
-    {children}
-  </button>
-);
-
 const FeatureCard: React.FC<{ icon: React.ReactNode; title: string; description: string }> = ({ icon, title, description }) => (
   <div className="bg-[#2a2a2a] p-6 rounded-lg text-center flex flex-col items-center shadow-lg">
     <div className="mb-4 p-4 border border-[#c0a062] rounded-md inline-block">
@@ -30,7 +24,9 @@ const Hero: React.FC = () => {
               Service Premium Chauffer with Premium
             </p>
             <div className="mt-8">
-              <GoldButton>Rezervă acum</GoldButton>
+              <a href="#rezervari" className="inline-block bg-gradient-to-r from-[#c0a062] to-[#d4b47a] text-black font-bold py-3 px-8 rounded-md shadow-lg hover:opacity-90 transition-opacity">
+                Rezervă acum
+              </a>
             </div>
           </div>
           <div className="relative flex items-center justify-center min-h-[200px] md:min-h-0">
