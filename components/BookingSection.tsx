@@ -59,10 +59,12 @@ Destinație: ${destination}`;
     <section id="rezervari" className="py-20 sm:py-28">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
         <div className="space-y-6">
-          <h2 className="text-white text-3xl font-bold">Contact text</h2>
-          <h3 className="font-serif text-5xl text-[#c0a062]">Inayfair Elite 2</h3>
+          <h2 className="tracking-widest text-sm font-bold text-gray-400 uppercase">
+            Rezervare Rapidă
+          </h2>
+          <h3 className="font-serif text-5xl text-[#c0a062]">Planifică Următoarea Călătorie</h3>
           <p className="text-gray-400 leading-relaxed">
-            În edenimasurat, ban ciorfirlee compo cere pisatie coastlafled wdh tot pchastel couxoware cniu pe ca tmpoi uidoi od nvieortre iid utha. makundaativeal fane auinei hdrio arrtiare givet ii ee stonotruzk dofcioroo otot fboantie putdd int tritos thtvegin reoicmreiib.
+            Completează detaliile de mai jos, iar butonul te va redirecționa automat către WhatsApp pentru a finaliza rezervarea instant cu echipa noastră.
           </p>
         </div>
         <div className="bg-[#1a1a1a] p-8 rounded-lg shadow-2xl">
