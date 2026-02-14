@@ -22,7 +22,7 @@ const ServiceCard: React.FC<{ icon: React.ReactNode; title: string; }> = ({ icon
 
 const Hero: React.FC = () => {
   return (
-    <section id="servicii" className="py-20 sm:py-28">
+    <section className="py-20 sm:py-28">
       <div className="bg-[#1a1a1a] rounded-lg p-8 md:p-12 shadow-2xl">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <div className="text-center md:text-left">
@@ -66,7 +66,7 @@ const Hero: React.FC = () => {
           />
         </div>
 
-        <div className="mt-24">
+        <div id="servicii" className="mt-24">
           <p className="text-center max-w-3xl mx-auto text-gray-300 leading-relaxed">
             Suntem o echipă dedicată, formată din soț și soție, specializați în transport de lux în regim privat și corporate. Cu o vastă experiență în servicii premium, ne mândrim cu un stil de condus impecabil și o atitudine profesională adaptată celor mai exigente cerințe.
           </p>
