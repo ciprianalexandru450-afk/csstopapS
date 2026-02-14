@@ -13,14 +13,18 @@ const FeatureCard: React.FC<{ icon: React.ReactNode; title: string; description:
   </div>
 );
 
-const ServiceCard: React.FC<{ icon: React.ReactNode; title: string; }> = ({ icon, title }) => (
-  <div className="bg-[#2a2a2a] p-6 rounded-lg text-center flex flex-col items-center justify-center shadow-lg h-full">
-    <div className="mb-4 text-[#c0a062]">
-      {icon}
+const ServiceCard: React.FC<{ icon: React.ReactNode; title: string; language: Language; }> = ({ icon, title, language }) => {
+  const titleClasses = `font-bold text-white ${language === 'da' ? 'text-sm sm:text-xl truncate' : 'text-lg sm:text-xl'}`;
+
+  return (
+    <div className="bg-[#2a2a2a] p-6 rounded-lg text-center flex flex-col items-center justify-center shadow-lg h-full">
+      <div className="mb-4 text-[#c0a062]">
+        {icon}
+      </div>
+      <h3 className={titleClasses}>{title}</h3>
     </div>
-    <h3 className="text-lg sm:text-xl font-bold text-white">{title}</h3>
-  </div>
-);
+  );
+};
 
 const Hero: React.FC<{ language: Language }> = ({ language }) => {
   const t = translations[language].hero;
@@ -80,18 +84,22 @@ const Hero: React.FC<{ language: Language }> = ({ language }) => {
               <ServiceCard 
                 icon={<BriefcaseIcon className="w-10 h-10" />}
                 title={t.serviceCorporate}
+                language={language}
               />
               <ServiceCard 
                 icon={<HeartIcon className="w-10 h-10" />}
                 title={t.serviceWeddings}
+                language={language}
               />
               <ServiceCard 
                 icon={<PlaneIcon className="w-10 h-10" />}
                 title={t.serviceAirport}
+                language={language}
               />
               <ServiceCard 
                 icon={<StarIcon className="w-10 h-10" />}
                 title={t.serviceVip}
+                language={language}
               />
             </div>
             <div className="mt-4 sm:mt-8 flex justify-center">
@@ -99,6 +107,7 @@ const Hero: React.FC<{ language: Language }> = ({ language }) => {
                     <ServiceCard
                       icon={<MoreHorizontalIcon className="w-10 h-10" />}
                       title={t.serviceOther}
+                      language={language}
                     />
                 </div>
             </div>
