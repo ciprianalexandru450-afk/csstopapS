@@ -42,7 +42,7 @@ const Header: React.FC<HeaderProps> = ({ language, setLanguage }) => {
         <div className="flex items-center justify-between h-20">
           <div className="flex-1 flex justify-start">
             <a href="#" className="text-2xl font-bold tracking-wider text-white">
-              <span className="text-[#c0a062]">CSS Top</span> ApS
+              <span className="text-[#c0a062]">Csstop</span> ApS
             </a>
           </div>
 
