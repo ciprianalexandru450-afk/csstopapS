@@ -72,7 +72,7 @@ const Hero: React.FC = () => {
           </p>
 
           <div className="mt-12 max-w-4xl mx-auto">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+            <div className="grid grid-cols-2 gap-4 sm:gap-8">
               <ServiceCard 
                 icon={<BriefcaseIcon className="w-10 h-10" />}
                 title="Evenimente Corporate"
@@ -90,7 +90,7 @@ const Hero: React.FC = () => {
                 title="Transport VIP"
               />
             </div>
-            <div className="mt-8 flex justify-center">
+            <div className="mt-4 sm:mt-8 flex justify-center">
                 <div className="w-full sm:w-[calc(50%-1rem)]">
                     <ServiceCard
                       icon={<MoreHorizontalIcon className="w-10 h-10" />}
