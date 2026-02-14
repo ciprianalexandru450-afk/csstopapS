@@ -66,7 +66,7 @@ const Hero: React.FC = () => {
           />
         </div>
 
-        <div id="servicii" className="mt-24">
+        <div id="servicii" className="mt-24 scroll-mt-[100px]">
           <p className="text-center max-w-3xl mx-auto text-gray-300 leading-relaxed">
             Suntem o echipă dedicată, formată din soț și soție, specializați în transport de lux în regim privat și corporate. Cu o vastă experiență în servicii premium, ne mândrim cu un stil de condus impecabil și o atitudine profesională adaptată celor mai exigente cerințe.
           </p>
