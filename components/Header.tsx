@@ -12,7 +12,7 @@ const Header: React.FC = () => {
           </div>
           <nav className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-4">
-              <a href="#servicii" className="text-white border-2 border-sky-500 px-3 py-2 rounded-md text-sm font-medium">Servicii</a>
+              <a href="#servicii" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Servicii</a>
               <a href="#rezervari" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Rezervări</a>
               <a href="#contact" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Contact</a>
             </div>
