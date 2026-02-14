@@ -1,5 +1,7 @@
 import React from 'react';
 import { ClockIcon, ShieldIcon, DiamondIcon, BriefcaseIcon, HeartIcon, PlaneIcon, StarIcon, MoreHorizontalIcon } from './icons';
+import { translations } from '../lib/translations';
+import type { Language } from '../App';
 
 const FeatureCard: React.FC<{ icon: React.ReactNode; title: string; description: string }> = ({ icon, title, description }) => (
   <div className="bg-[#2a2a2a] p-6 rounded-lg text-center flex flex-col items-center shadow-lg">
@@ -20,21 +22,23 @@ const ServiceCard: React.FC<{ icon: React.ReactNode; title: string; }> = ({ icon
   </div>
 );
 
-const Hero: React.FC = () => {
+const Hero: React.FC<{ language: Language }> = ({ language }) => {
+  const t = translations[language].hero;
+  
   return (
     <section className="py-20 sm:py-28">
       <div className="bg-[#1a1a1a] rounded-lg p-8 md:p-12 shadow-2xl">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <div className="text-center md:text-left">
             <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight">
-              Excelență in Mișcare
+              {t.title}
             </h1>
             <p className="mt-4 text-lg text-gray-300">
-              Transformăm fiecare drum într-o experiență VIP.
+              {t.subtitle}
             </p>
             <div className="mt-8">
               <a href="#rezervari" className="inline-block bg-gradient-to-r from-[#c0a062] to-[#d4b47a] text-black font-bold py-3 px-8 rounded-md shadow-lg hover:opacity-90 transition-opacity">
-                Rezervă acum
+                {t.button}
               </a>
             </div>
           </div>
@@ -51,50 +55,50 @@ const Hero: React.FC = () => {
         <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           <FeatureCard 
             icon={<ClockIcon className="w-8 h-8 text-[#c0a062]" />} 
-            title="Punctualitate" 
-            description="Suntem renumiți pentru punctualitate. Sosim cu 15 minute înainte de ora stabilită." 
+            title={t.feature1Title}
+            description={t.feature1Desc}
           />
           <FeatureCard 
             icon={<ShieldIcon className="w-8 h-8 text-[#c0a062]" />} 
-            title="Discreție" 
-            description="Suntem întotdeauna discreți, oferind servicii de excepție, la orice oră stabilită." 
+            title={t.feature2Title}
+            description={t.feature2Desc}
           />
           <FeatureCard 
             icon={<DiamondIcon className="w-8 h-8 text-[#c0a062]" />} 
-            title="Confort Premium" 
-            description="Șoferi de prim rang cu Wi-Fi și băuturi premium incluse pentru confortul dumneavoastră." 
+            title={t.feature3Title}
+            description={t.feature3Desc}
           />
         </div>
 
         <div id="servicii" className="mt-24 scroll-mt-[100px]">
           <p className="text-center max-w-3xl mx-auto text-gray-300 leading-relaxed">
-            Suntem o echipă dedicată, formată din soț și soție, specializați în transport de lux în regim privat și corporate. Cu o vastă experiență în servicii premium, ne mândrim cu un stil de condus impecabil și o atitudine profesională adaptată celor mai exigente cerințe.
+            {t.servicesIntro}
           </p>
 
           <div className="mt-12 max-w-4xl mx-auto">
             <div className="grid grid-cols-2 gap-4 sm:gap-8">
               <ServiceCard 
                 icon={<BriefcaseIcon className="w-10 h-10" />}
-                title="Evenimente Corporate"
+                title={t.serviceCorporate}
               />
               <ServiceCard 
                 icon={<HeartIcon className="w-10 h-10" />}
-                title="Nunți & Evenimente"
+                title={t.serviceWeddings}
               />
               <ServiceCard 
                 icon={<PlaneIcon className="w-10 h-10" />}
-                title="Transfer Aeroport"
+                title={t.serviceAirport}
               />
               <ServiceCard 
                 icon={<StarIcon className="w-10 h-10" />}
-                title="Transport VIP"
+                title={t.serviceVip}
               />
             </div>
             <div className="mt-4 sm:mt-8 flex justify-center">
                 <div className="w-full sm:w-[calc(50%-1rem)]">
                     <ServiceCard
                       icon={<MoreHorizontalIcon className="w-10 h-10" />}
-                      title="Altele"
+                      title={t.serviceOther}
                     />
                 </div>
             </div>
