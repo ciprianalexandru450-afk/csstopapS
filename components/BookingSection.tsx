@@ -14,10 +14,13 @@ const FormInput: React.FC<{
   value: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   required?: boolean;
-}> = ({ label, placeholder, type = 'text', className = '', value, onChange, required = false }) => (
+  name: string;
+}> = ({ label, placeholder, type = 'text', className = '', value, onChange, required = false, name }) => (
   <div className={className}>
-    <label className="block text-sm font-medium text-gray-400 mb-2">{label}</label>
+    <label htmlFor={name} className="block text-sm font-medium text-gray-400 mb-2">{label}</label>
     <input 
+      id={name}
+      name={name}
       type={type} 
       placeholder={placeholder} 
       className="w-full bg-[#333] border border-gray-600 rounded-md py-2 px-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#c0a062] focus:border-transparent transition" 
@@ -39,12 +42,11 @@ const BookingSection: React.FC = () => {
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
 
-    const message = `Bună ziua! Am o rezervare nouă de pe site:
-Nume: ${name}
+    const message = `Nume: ${name}
 Telefon: ${phone}
 Data: ${date}
 Ora: ${time}
-Preluare de la: ${pickup}
+Preluare: ${pickup}
 Destinație: ${destination}`;
 
     const encodedMessage = encodeURIComponent(message);
@@ -67,15 +69,15 @@ Destinație: ${destination}`;
           <h3 className="text-2xl font-bold text-white mb-6">Solicită o Călătorie</h3>
           <form className="space-y-4" onSubmit={handleSubmit}>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <FormInput label="Nume" placeholder="Nume" value={name} onChange={(e) => setName(e.target.value)} required />
-              <FormInput label="Număr tău complet" placeholder="Număr tău complet" value={phone} onChange={(e) => setPhone(e.target.value)} required />
+              <FormInput name="name" label="Nume complet" placeholder="Numele dvs. complet" value={name} onChange={(e) => setName(e.target.value)} required />
+              <FormInput name="phone" label="Telefon" placeholder="Numărul de telefon" type="tel" value={phone} onChange={(e) => setPhone(e.target.value)} required />
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <FormInput label="Data" placeholder="data" type="date" value={date} onChange={(e) => setDate(e.target.value)} required />
-              <FormInput label="Ora" placeholder="ora" type="time" value={time} onChange={(e) => setTime(e.target.value)} required />
+              <FormInput name="date" label="Data" placeholder="Selectați data" type="date" value={date} onChange={(e) => setDate(e.target.value)} required />
+              <FormInput name="time" label="Ora" placeholder="Selectați ora" type="time" value={time} onChange={(e) => setTime(e.target.value)} required />
             </div>
-            <FormInput label="Preluare" placeholder="Preluare" value={pickup} onChange={(e) => setPickup(e.target.value)} required />
-            <FormInput label="Destinație" placeholder="Destinație" value={destination} onChange={(e) => setDestination(e.target.value)} required />
+            <FormInput name="pickup" label="Adresă preluare" placeholder="Adresa completă de preluare" value={pickup} onChange={(e) => setPickup(e.target.value)} required />
+            <FormInput name="destination" label="Adresă destinație" placeholder="Adresa completă de destinație" value={destination} onChange={(e) => setDestination(e.target.value)} required />
             <div className="pt-4">
               <GoldButton type="submit" className="w-full">Rezervă acum</GoldButton>
             </div>
