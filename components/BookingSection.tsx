@@ -74,7 +74,7 @@ Destinație: ${destination}`;
               <FormInput name="name" label="Nume complet" placeholder="Numele dvs. complet" value={name} onChange={(e) => setName(e.target.value)} required />
               <FormInput name="phone" label="Telefon" placeholder="Numărul de telefon" type="tel" value={phone} onChange={(e) => setPhone(e.target.value)} required />
             </div>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <FormInput name="date" label="Data" placeholder="Selectați data" type="date" value={date} onChange={(e) => setDate(e.target.value)} required />
               <FormInput name="time" label="Ora" placeholder="Selectați ora" type="time" value={time} onChange={(e) => setTime(e.target.value)} required />
             </div>
