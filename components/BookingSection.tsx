@@ -46,7 +46,11 @@ const BookingSection: React.FC<{ language: Language }> = ({ language }) => {
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
 
-    const message = `Name: ${name}
+    const message = `🆕 [BOOKING FROM WEBSITE - CSSTOP ApS]
+
+-----------------------------------
+
+Name: ${name}
 Phone: ${phone}
 Date: ${date}
 Time: ${time}
