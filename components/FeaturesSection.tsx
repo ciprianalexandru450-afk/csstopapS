@@ -3,14 +3,14 @@ import { BuildingIcon, HashIcon, MapPinIcon, GlobeIcon, PhoneIcon, MailIcon } fr
 import { translations } from '../lib/translations';
 import type { Language } from '../App';
 
-const FeatureItem: React.FC<{ icon: React.ReactNode; label: string; value: string }> = ({ icon, label, value }) => (
+const FeatureItem: React.FC<{ icon: React.ReactNode; label: string; value: React.ReactNode }> = ({ icon, label, value }) => (
     <div className="flex items-start space-x-4">
       <div className="flex-shrink-0 bg-[#2a2a2a] p-3 rounded-full border-2 border-[#c0a062] mt-1">
         {icon}
       </div>
       <div>
         <p className="text-sm font-semibold text-gray-400 uppercase tracking-wider">{label}</p>
-        <p className="text-lg text-white">{value}</p>
+        <div className="text-lg text-white">{value}</div>
       </div>
     </div>
   );
@@ -36,8 +36,13 @@ const FeaturesSection: React.FC<{ language: Language }> = ({ language }) => {
               />
                <FeatureItem 
                 icon={<PhoneIcon className="w-6 h-6 text-[#c0a062]" />} 
-                label={t.whatsapp}
-                value="+40741050618"
+                label={t.phone}
+                value={
+                  <div>
+                    <div>Ana-Maria Sincu</div>
+                    <a href="tel:004571354061" className="hover:text-[#c0a062] transition-colors">004571354061</a>
+                  </div>
+                }
               />
               <FeatureItem 
                 icon={<MapPinIcon className="w-6 h-6 text-[#c0a062]" />} 
@@ -52,7 +57,7 @@ const FeaturesSection: React.FC<{ language: Language }> = ({ language }) => {
               <FeatureItem 
                 icon={<MailIcon className="w-6 h-6 text-[#c0a062]" />} 
                 label={t.email}
-                value="acceslimo888@gmail.com"
+                value={<a href="mailto:acceslimo888@gmail.com?subject=Booking%20Request%20-%20Csstop%20ApS" className="hover:text-[#c0a062] transition-colors break-all">acceslimo888@gmail.com</a>}
               />
             </div>
           </div>

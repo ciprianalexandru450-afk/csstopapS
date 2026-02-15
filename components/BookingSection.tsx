@@ -54,7 +54,7 @@ Pickup: ${pickup}
 Destination: ${destination}`;
 
     const encodedMessage = encodeURIComponent(message);
-    const whatsappUrl = `https://wa.me/40741050618?text=${encodedMessage}`;
+    const whatsappUrl = `https://wa.me/4571354061?text=${encodedMessage}`;
 
     window.open(whatsappUrl, '_blank');
   };
