@@ -46,14 +46,23 @@ const Hero: React.FC<{ language: Language }> = ({ language }) => {
               </a>
             </div>
           </div>
-          <div className="relative flex items-center justify-center min-h-[200px] md:min-h-0">
+          <div className="relative flex items-center justify-center min-h-[200px] md:min-h-[300px]">
             {/* Spotlight effect */}
             <div className="absolute inset-0 rounded-lg bg-[radial-gradient(ellipse_at_center,_rgba(107,114,128,0.2)_0%,_rgba(17,24,39,0)_70%)]"></div>
-            <img 
-              src="https://di-shared-assets.dealerinspire.com/legacy/rackspace/ldm-images/2020-MB-S-450-Anthracite-Blue-Color.png" 
-              alt="Mercedes S-Class" 
-              className="w-full h-auto object-contain relative z-10 drop-shadow-2xl"
-            />
+            
+            {/* Car Stack */}
+            <div className="relative z-10 flex flex-col items-end">
+                <img 
+                    src="https://di-shared-assets.dealerinspire.com/legacy/rackspace/ldm-images/2020-MB-S-450-Anthracite-Blue-Color.png" 
+                    alt="Mercedes S-Class" 
+                    className="w-full h-auto object-contain drop-shadow-2xl"
+                />
+                <img 
+                    src="https://media.oneweb.mercedes-benz.com/images/dynamic/europe/IN/297144/804/iris.png?q=COSY-EU-100-1713d0VXqrS7qtyO67PobzIr3eWsrrCsdRRzwQZgk4ZbMw3SGtlKStsd2HtcUfp8qXGEuiBJ0l3IrOB2NzObApRA9I5ux4uQC31SrkzNwL6m7jA6ohKV5SQ%25vqCv%25yLRzAHYax75prH1KM1n8wvT3oiZLkYM4FGIJTg90QT6PDBLNSeWAwItsd5cQcUfCX1XGEz53J0l7rhOB2Ky2bApHtXI5u8c1QC3ikwkzN4Lum7jgMmhKVBSV%25vqAv9yLR5nWYaxCbxrH1zmRn8w7oboiZKeXM4F1RcTg9Ukm6tTnuNpRhhKVHtc%25YhD3Lyr%258cDYax5ahrH1ABfn8wa82oiZH5XM4F8mMTg9iml6PDePoSeWsKjtsLV79MOuljcVGXvGE7dhcfWF0FT3THuPsa28uKxvEOo7em&BKGND=9&IMGT=P27&cp=U7lLKRUtPa6KAFr8s_ubHw&uni=m&POV=BE040,PZM" 
+                    alt="Mercedes V-Class" 
+                    className="w-full h-auto object-contain drop-shadow-2xl scale-110 origin-right mt-0 md:-mt-12"
+                />
+            </div>
           </div>
         </div>
         <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
