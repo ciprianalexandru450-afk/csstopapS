@@ -34,13 +34,23 @@ const FeaturesSection: React.FC<{ language: Language }> = ({ language }) => {
                 label={t.cvr}
                 value="44571021"
               />
-               <FeatureItem 
+              <FeatureItem 
                 icon={<PhoneIcon className="w-6 h-6 text-[#c0a062]" />} 
-                label={t.phone}
+                label={t.contact1}
                 value={
                   <div>
                     <div>Ana-Maria Sincu</div>
                     <a href="tel:004571354061" className="hover:text-[#c0a062] transition-colors">004571354061</a>
+                  </div>
+                }
+              />
+              <FeatureItem 
+                icon={<PhoneIcon className="w-6 h-6 text-[#c0a062]" />} 
+                label={t.contact2}
+                value={
+                  <div>
+                    <div>Mihai Tudor</div>
+                    <a href="tel:004552688052" className="hover:text-[#c0a062] transition-colors">004552688052</a>
                   </div>
                 }
               />
