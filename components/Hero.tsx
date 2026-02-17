@@ -1,5 +1,5 @@
 import React from 'react';
-import { ClockIcon, ShieldIcon, DiamondIcon, BriefcaseIcon, HeartIcon, PlaneIcon, StarIcon, MoreHorizontalIcon } from './icons';
+import { ClockIcon, ShieldIcon, DiamondIcon, BriefcaseIcon, HeartIcon, PlaneIcon, StarIcon, MoreHorizontalIcon, BuildingIcon } from './icons';
 import { translations } from '../lib/translations';
 import type { Language } from '../App';
 
@@ -110,15 +110,16 @@ const Hero: React.FC<{ language: Language }> = ({ language }) => {
                 title={t.serviceVip}
                 language={language}
               />
-            </div>
-            <div className="mt-4 sm:mt-8 flex justify-center">
-                <div className="w-full sm:w-[calc(50%-1rem)]">
-                    <ServiceCard
-                      icon={<MoreHorizontalIcon className="w-10 h-10" />}
-                      title={t.serviceOther}
-                      language={language}
-                    />
-                </div>
+              <ServiceCard 
+                icon={<BuildingIcon className="w-10 h-10" />}
+                title={t.serviceB2B}
+                language={language}
+              />
+              <ServiceCard
+                icon={<MoreHorizontalIcon className="w-10 h-10" />}
+                title={t.serviceOther}
+                language={language}
+              />
             </div>
           </div>
         </div>

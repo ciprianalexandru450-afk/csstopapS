@@ -20,6 +20,7 @@ export const translations = {
       serviceWeddings: 'Weddings & Events',
       serviceAirport: 'Airport Transfer',
       serviceVip: 'VIP Transport',
+      serviceB2B: 'B2B',
       serviceOther: 'Other',
     },
     booking: {
@@ -78,6 +79,7 @@ export const translations = {
       serviceWeddings: 'Bryllupper & Events',
       serviceAirport: 'Lufthavnstransfer',
       serviceVip: 'VIP Transport',
+      serviceB2B: 'B2B',
       serviceOther: 'Andet',
     },
     booking: {
