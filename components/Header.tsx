@@ -39,7 +39,7 @@ const Header: React.FC<HeaderProps> = ({ language, setLanguage }) => {
   return (
     <header className="bg-[#1a1a1a] sticky top-0 z-50 shadow-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between relative">
           <div className="flex-shrink-0">
             <a href="/" style={{ display: 'flex', alignItems: 'center', padding: '0 20px', textDecoration: 'none' }}>
               <img 
@@ -50,10 +50,11 @@ const Header: React.FC<HeaderProps> = ({ language, setLanguage }) => {
             </a>
           </div>
 
+          <div className="absolute left-1/2 -translate-x-1/2">
+            <LanguageSwitcher />
+          </div>
+
           <div className="flex-1 flex justify-end items-center space-x-8">
-            <div className="hidden md:block">
-              <LanguageSwitcher />
-            </div>
             <nav className="hidden md:block">
               <div className="flex items-baseline space-x-4">
                 {navLinks.map((link) => (
@@ -62,7 +63,6 @@ const Header: React.FC<HeaderProps> = ({ language, setLanguage }) => {
               </div>
             </nav>
             <div className="flex items-center md:hidden">
-              <LanguageSwitcher />
               <button
                 onClick={() => setIsOpen(!isOpen)}
                 type="button"
