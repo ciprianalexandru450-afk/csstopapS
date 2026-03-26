@@ -45,7 +45,7 @@ const Header: React.FC<HeaderProps> = ({ language, setLanguage }) => {
               <img 
                 src="https://i.ibb.co/1YYNrqh8/413aa893-b174-406c-ac84-f42c9cc50a44.png" 
                 alt="Logo" 
-                style={{ height: '60px', width: 'auto', border: 0 }}
+                style={{ height: '120px', width: 'auto', border: 0 }}
               />
             </a>
           </div>
