@@ -50,7 +50,7 @@ const Header: React.FC<HeaderProps> = ({ language, setLanguage }) => {
             </a>
           </div>
 
-          <div className="absolute left-1/2 -translate-x-1/2">
+          <div className="absolute right-20 md:right-auto md:left-1/2 md:-translate-x-1/2 top-1/2 -translate-y-1/2">
             <LanguageSwitcher />
           </div>
 
