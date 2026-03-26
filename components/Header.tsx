@@ -41,11 +41,11 @@ const Header: React.FC<HeaderProps> = ({ language, setLanguage }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
         <div className="flex items-center justify-between">
           <div className="flex-shrink-0">
-            <a href="https://ibb.co/n85s9kRg" className="flex items-center mr-4">
+            <a href="/" style={{ display: 'flex', alignItems: 'center', padding: '0 20px', textDecoration: 'none' }}>
               <img 
-                src="https://i.ibb.co/93C96YG8/13839933-5390-40bb-81da-5f7d1f220ba7.png" 
-                alt="Csstop Logo" 
-                style={{ height: '50px', objectFit: 'contain', border: 0 }}
+                src="https://i.ibb.co/1YYNrqh8/413aa893-b174-406c-ac84-f42c9cc50a44.png" 
+                alt="Logo" 
+                style={{ height: '60px', width: 'auto', border: 0 }}
               />
             </a>
           </div>
