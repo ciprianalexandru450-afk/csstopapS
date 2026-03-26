@@ -65,18 +65,18 @@ Destination: ${destination}`;
 
   return (
     <section id="rezervari" className="py-20 sm:py-28">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-        <div className="space-y-6 text-center lg:text-left">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+        <div className="space-y-8 text-center lg:text-left">
           <h2 className="tracking-widest text-sm font-bold text-gray-400 uppercase">
             {t.title}
           </h2>
-          <h3 className="font-serif text-5xl text-[#c0a062]">{t.heading}</h3>
-          <p className="text-gray-400 leading-relaxed">
+          <h3 className="font-serif text-6xl text-[#c0a062]">{t.heading}</h3>
+          <p className="text-xl text-gray-400 leading-relaxed">
             {t.description}
           </p>
         </div>
-        <div className="bg-[#1a1a1a] p-8 rounded-lg shadow-2xl">
-          <h3 className="text-2xl font-bold text-white mb-6">{t.formTitle}</h3>
+        <div className="bg-[#1a1a1a]/80 backdrop-blur-sm p-10 rounded-lg shadow-2xl border border-gray-800">
+          <h3 className="text-3xl font-bold text-white mb-8">{t.formTitle}</h3>
           <form className="space-y-4" onSubmit={handleSubmit}>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <FormInput name="name" label={t.formName} placeholder={t.formNamePlaceholder} value={name} onChange={(e) => setName(e.target.value)} required />

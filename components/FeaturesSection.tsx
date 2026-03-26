@@ -20,10 +20,10 @@ const FeaturesSection: React.FC<{ language: Language }> = ({ language }) => {
 
     return (
       <section id="contact" className="py-20 sm:py-28 scroll-mt-[100px]">
-        <div className="bg-[#1a1a1a] p-8 md:p-12 rounded-lg shadow-2xl">
-          <div className="max-w-5xl mx-auto">
-            <h2 className="text-center font-serif text-4xl font-bold text-white mb-12">{t.title}</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-10">
+        <div className="w-full">
+          <div className="max-w-full">
+            <h2 className="text-center font-serif text-5xl font-bold text-white mb-16">{t.title}</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-12 gap-y-14">
               <FeatureItem 
                 icon={<BuildingIcon className="w-6 h-6 text-[#c0a062]" />} 
                 label={t.companyName}
