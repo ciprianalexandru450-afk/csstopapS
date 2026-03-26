@@ -38,21 +38,22 @@ const Header: React.FC<HeaderProps> = ({ language, setLanguage }) => {
 
   return (
     <header className="bg-[#1a1a1a] sticky top-0 z-50 shadow-md">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
-          <div className="flex-1 flex justify-start">
-            <a href="#" className="text-2xl font-bold tracking-wider text-white">
-              <span className="text-[#c0a062]">Csstop</span> ApS
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+        <div className="flex items-center justify-between">
+          <div className="flex-shrink-0">
+            <a href="https://ibb.co/n85s9kRg" className="flex items-center mr-4">
+              <img 
+                src="https://i.ibb.co/93C96YG8/13839933-5390-40bb-81da-5f7d1f220ba7.png" 
+                alt="Csstop Logo" 
+                style={{ height: '50px', objectFit: 'contain', border: 0 }}
+              />
             </a>
           </div>
 
-          <div className="flex-1 flex justify-center">
+          <div className="flex-1 flex justify-end items-center space-x-8">
             <div className="hidden md:block">
               <LanguageSwitcher />
             </div>
-          </div>
-          
-          <div className="flex-1 flex justify-end items-center">
             <nav className="hidden md:block">
               <div className="flex items-baseline space-x-4">
                 {navLinks.map((link) => (
